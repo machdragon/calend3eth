@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+/* px uses absolute unit of measurement like in, pt
+and is 1/96 of an in unit
+em is unit relative to the currently chosen font size
+which scales with the browser screen
+option 1 is smaller but nicer used in youtube tutorial
+option 2 is used in the text tutorial but bigger + scales font to browser
+2 is better for mobile? I guess but I like the look of 1 better */
+
+h1 {
+  margin:0;
+}
+
+#slogan {
+  margin: 0;
+}
+
+#calendar {
+  background: white;
+  width: 90%;
+  color: black;
+  font-size: 24px;
+  padding: 20px;
+  margin: 20px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 0;
+  font-size: 24px;
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+body {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  margin: 50px;
+}
+
+/* h1 {
+  margin: 0;
+  font-size: 5em;
+}
+
+#slogan {
+  margin: 0;
+  font-size: 2em;
+}
+
+button {
+  background: black;
+  color: white;
+  border: 0;
+  font-size: 1.5em;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 30px;
+} */
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
