@@ -64,6 +64,22 @@ button {
   margin-top: 30px;
 } */
 
+#admin {
+  background: white;
+  padding: 40px;
+  margin: 20px auto;
+  color: black;
+}
+
+#settings-button {
+  background: #282c34;
+  color: white;
+}
+
+#admin-button {
+  margin: 5px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

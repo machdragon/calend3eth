@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract Calend3eth {
     uint rate;
-    address payable owner;
+    address payable public owner;
 
     struct Appointment {
     string title;     // title of the meeting

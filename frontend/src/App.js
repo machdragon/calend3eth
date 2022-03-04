@@ -52,7 +52,7 @@ function App() {
         <h1>calend3.eth</h1>
         <div id = "slogan"> web3 appointment scheduling</div>
         {!account && <button onClick={connect}>connect wallet</button>}
-        {account && <Calendar/>}
+        {account && <Calendar account={account} />}
       </header>
     </div>
   );
