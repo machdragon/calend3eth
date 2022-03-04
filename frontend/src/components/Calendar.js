@@ -187,6 +187,11 @@ const Calendar = (props) => {
                 Admin
             </Button>}
         </div>
+
+        <div>
+            Current Rate: {rate} ETH/min
+        </div>
+
         {showAdmin && <Admin />}
         <div id="calendar">
             <Scheduler data={appointments}>
