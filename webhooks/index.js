@@ -38,7 +38,7 @@ app.post("/webhook", (request, response) => {
 });
 
 function isValidSignature(request) {    
-    const token = 'Auth token provided by Alchemy on the Webhook setup page';
+    const token = process.env.ALCHEMY_SIGNING_KEY;
     const headers = request.headers;
     const signature = headers['x-alchemy-signature']; // Lowercase for NodeJS
     const body = request.body;    

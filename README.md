@@ -1,18 +1,44 @@
 # Calend3.eth
 
-This project demonstrates how to implement a web3 based Calendly web app using ETH to book appointments. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project implements a web3 based Calendly React web app using ETH to book appointments. 
 
-Try running some of the following tasks:
+Users interact with the Frontend React Calend3 Web3app, viewing the available schedule to book appointments by paying a rate of ETH/min as set by the owner.
+Once an appointment has been booked, the user receives a confirmation of the appointment booking on the blockchain viewed by etherscan txn hash.
+The owner of the Calendly receives ETH and is notified by SMS of the appointment on the blockchain.
 
-```shell
+We deploy this smart contract to the Goerli Testnet, Calend3 frontend calls the smart contract backend for getting/setting rate and to send/recieve ETH transactions
+
+How to start this project utilizing Solidity, NodeJs, Hardhat, React, Alchemy, Metamask, Twilio
+
+cd calend3eth
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
+npm install --save-dev @nomiclabs/hardhat-waffle@^2.0.0 ethereum-waffle@^3.0.0 chai@^4.2.0 @nomiclabs/hardhat-ethers@^2.0.0 ethers@^5.0.0
+npx hardhat
 npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
 
+deploy our smart contract on network goerli
+npx hardhat run scripts/deploy.js --network goerli
 
-Source: https://www.youtube.com/channel/UCY2ifv8iH1Dsgjrz-h3lWLQ
+cd frontend
+npm start
+
+launches Frontend React WebApp at http://localhost:3000/
+displays calendar for user and admin components verifies against Metamask owner address
+
+requires Metamask to be installed in frontend directory
+npm install @metamask/detect-provider
+
+Twilio Notifications with Alchemy Webhooks
+cd webhooks && npm init -y
+npm install express body-parser twilio
+node index.js
+
+unzip /path/to/ngrok.zip
+ngrok authtoken [your token]
+ngrok http 3100
+
+copy https ngrok address and paste into Alchemy Notify Webhook to get Notifications about our Smart Contract Transactions
+
+Source: [Part Time Larry](https://www.youtube.com/channel/UCY2ifv8iH1Dsgjrz-h3lWLQ)
