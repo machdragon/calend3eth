@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ethers } from "ethers";
 import abi from "../abis/Calend3eth.json";
+import config from "../config.json";
 
 /* Scheduling Component */
 import { ViewState, EditingState, IntegratedEditing } from '@devexpress/dx-react-scheduler';
@@ -12,7 +13,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
 // could put the address in config.js and import it instead of hardcoding it
-const contractAddress = "0xc725399b528c96C8B74Af7bd80ad450D9caE3Fa8";
+// not really needed to be private, can look contract address up on etherscan and see tx from and to it
+const contractAddress = config.CONTRACT_ADDRESS;
 const contractABI = abi.abi;
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 const contract = new ethers.Contract(contractAddress, contractABI, provider.getSigner());  
