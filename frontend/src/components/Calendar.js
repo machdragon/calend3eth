@@ -204,7 +204,7 @@ const Calendar = (props) => {
                 <Appointments />
                 <AppointmentForm />
             </Scheduler>
-        </div>;
+        </div>
 
         {showDialog && <ConfirmDialog />}
     </div> 
