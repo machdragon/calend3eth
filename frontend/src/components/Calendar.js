@@ -12,6 +12,20 @@ import Dialog from '@mui/material/Dialog';
 import CircularProgress from '@mui/material/CircularProgress';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
+// console.log("Requesting account...")
+if (window.ethereum) {
+    // console.log("MetaMask detected");
+    try {
+        let provider = window.ethereum.request({
+            method: "eth_requestAccounts",
+        });
+    } catch (error) {
+        // console.log("Error connecting...");
+    }
+} else {
+    alert("MetaMask not detected. Please install MetaMask from metamask.io");
+}
+
 // could put the address in config.js and import it instead of hardcoding it
 // not really needed to be private, can look contract address up on etherscan and see tx from and to it
 const contractAddress = config.CONTRACT_ADDRESS;
@@ -19,7 +33,7 @@ const contractABI = abi.abi;
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 const contract = new ethers.Contract(contractAddress, contractABI, provider.getSigner());  
 
-console.log(contract);
+// console.log(contract);
 
 const Calendar = (props) => {
 
@@ -38,18 +52,18 @@ const Calendar = (props) => {
         
         // get contract owner and set admin if connected account is owner
         const owner = await contract.owner();
-        console.log(owner.toUpperCase());
+        // console.log(owner.toUpperCase());
 
         setIsAdmin(owner.toUpperCase() === props.account.toUpperCase());
-        console.log(props.account.toUpperCase());
+        // console.log(props.account.toUpperCase());
         
         const rate = await contract.getRate();
         setRate(ethers.utils.formatEther(rate.toString()));
-        console.log(rate.toString());
+        // console.log(rate.toString());
 
         const appointmentData = await contract.getAppointments();
-        console.log('got appointments');
-        console.log(appointmentData);
+        // console.log('got appointments');
+        // console.log(appointmentData);
 
         transformAppointmentData(appointmentData);
     }
