@@ -1,7 +1,7 @@
 {
-  "homepage": "https://machdragon.github.io/calend3eth",
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://machdragon.github.io/calend3eth",
   "private": true,
   "dependencies": {
     "@devexpress/dx-react-core": "^3.0.1",
