@@ -1,10 +1,7 @@
 # Calend3.eth
-
-https://machdragon.github.io/calend3eth/
+This project implements a Web3 based Calendly React web app using ETH to book appointments. Check it out at https://machdragon.github.io/calend3eth/
 
 Requires the [Metamask Wallet Extension](https://metamask.io/) to be installed in your browser to interact with this Web3 ReactJs app built on the Ethereum Blockchain.
-
-This project implements a Web3 based Calendly React web app using ETH to book appointments. 
 
 Frameworks used: ReactJS, Solidity, NodeJs, Hardhat, Alchemy, Metamask, Twilio.
 
